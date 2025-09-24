@@ -14,6 +14,33 @@ import { PlaceholderPage } from "./pages/PlaceholderPage";
 import Login from "./pages/common/Login";
 import { isAuthenticated } from "@/lib/auth";
 
+// Admin Masters
+import Masters from "./pages/admin/Masters";
+import EmployeeCode from "./pages/admin/masters/EmployeeCode";
+import GLCode from "./pages/admin/masters/GLCode";
+import Department from "./pages/admin/masters/Department";
+import {
+  Grade,
+  Society,
+  Designation,
+  City,
+  State,
+  Country,
+  Category,
+  Location,
+  SubLocation,
+  EmployeeType,
+  ReportingManager,
+  TravelMode,
+  TravelTypeMaster,
+  TravelSubTypeMaster,
+  Expense,
+  Leave,
+  CompanyMaster,
+  GuestHouseMaster,
+  HotelMaster,
+} from "./pages/admin/masters/PlaceholderMaster";
+
 const queryClient = new QueryClient();
 
 function Protected({ children }: { children: JSX.Element }) {
@@ -47,6 +74,38 @@ const App = () => (
               </Protected>
             }
           />
+
+          {/* Admin Masters */}
+          <Route
+            path="/admin/masters"
+            element={
+              <Protected>
+                <Masters />
+              </Protected>
+            }
+          />
+          <Route path="/admin/masters/employee-code" element={<Protected><EmployeeCode /></Protected>} />
+          <Route path="/admin/masters/grade" element={<Protected><Grade /></Protected>} />
+          <Route path="/admin/masters/gl-code" element={<Protected><GLCode /></Protected>} />
+          <Route path="/admin/masters/society" element={<Protected><Society /></Protected>} />
+          <Route path="/admin/masters/department" element={<Protected><Department /></Protected>} />
+          <Route path="/admin/masters/designation" element={<Protected><Designation /></Protected>} />
+          <Route path="/admin/masters/city" element={<Protected><City /></Protected>} />
+          <Route path="/admin/masters/state" element={<Protected><State /></Protected>} />
+          <Route path="/admin/masters/country" element={<Protected><Country /></Protected>} />
+          <Route path="/admin/masters/category" element={<Protected><Category /></Protected>} />
+          <Route path="/admin/masters/location" element={<Protected><Location /></Protected>} />
+          <Route path="/admin/masters/sub-location" element={<Protected><SubLocation /></Protected>} />
+          <Route path="/admin/masters/employee-type" element={<Protected><EmployeeType /></Protected>} />
+          <Route path="/admin/masters/reporting-manager" element={<Protected><ReportingManager /></Protected>} />
+          <Route path="/admin/masters/travel-mode" element={<Protected><TravelMode /></Protected>} />
+          <Route path="/admin/masters/travel-type-master" element={<Protected><TravelTypeMaster /></Protected>} />
+          <Route path="/admin/masters/travel-sub-type-master" element={<Protected><TravelSubTypeMaster /></Protected>} />
+          <Route path="/admin/masters/expense" element={<Protected><Expense /></Protected>} />
+          <Route path="/admin/masters/leave" element={<Protected><Leave /></Protected>} />
+          <Route path="/admin/masters/company-master" element={<Protected><CompanyMaster /></Protected>} />
+          <Route path="/admin/masters/guest-house-master" element={<Protected><GuestHouseMaster /></Protected>} />
+          <Route path="/admin/masters/hotel-master" element={<Protected><HotelMaster /></Protected>} />
           <Route
             path="/travel-request/:id"
             element={
