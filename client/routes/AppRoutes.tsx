@@ -39,6 +39,7 @@ import {
 
 // Placeholder pages for other admin sections
 import { PlaceholderPage } from "../pages/PlaceholderPage";
+import { PlaceholderPageAdmin } from "../pages/admin/PlaceholderPageAdmin";
 
 // Common
 import Login from "../pages/common/Login";
@@ -88,61 +89,61 @@ export default function AppRoutes() {
         <Route path="/admin/masters/hotel-master" element={<HotelMaster />} />
         
         {/* Other Admin Sections */}
-        <Route 
-          path="/admin/employee" 
+        <Route
+          path="/admin/employee"
           element={
-            <PlaceholderPage
+            <PlaceholderPageAdmin
               title="Employee Management"
               description="Manage employee records and information"
             />
-          } 
+          }
         />
-        <Route 
-          path="/admin/travel" 
+        <Route
+          path="/admin/travel"
           element={
-            <PlaceholderPage
+            <PlaceholderPageAdmin
               title="Travel Management"
               description="Manage travel requests and bookings"
             />
-          } 
+          }
         />
         <Route path="/admin/travel-approvals" element={<TravelRequestApprovals />} />
         <Route path="/admin/travel-request/:id" element={<TravelApplicationAdmin />} />
-        <Route 
-          path="/admin/expense" 
+        <Route
+          path="/admin/expense"
           element={
-            <PlaceholderPage
+            <PlaceholderPageAdmin
               title="Expense Management"
               description="Manage expense reports and reimbursements"
             />
-          } 
+          }
         />
-        <Route 
-          path="/admin/leave" 
+        <Route
+          path="/admin/leave"
           element={
-            <PlaceholderPage
+            <PlaceholderPageAdmin
               title="Leave Management"
               description="Manage employee leave requests and policies"
             />
-          } 
+          }
         />
-        <Route 
-          path="/admin/reports" 
+        <Route
+          path="/admin/reports"
           element={
-            <PlaceholderPage
+            <PlaceholderPageAdmin
               title="Reports & Analytics"
               description="View reports and analytics dashboard"
             />
-          } 
+          }
         />
-        <Route 
-          path="/admin/settings" 
+        <Route
+          path="/admin/settings"
           element={
-            <PlaceholderPage
+            <PlaceholderPageAdmin
               title="System Settings"
               description="Configure system settings and preferences"
             />
-          } 
+          }
         />
       </Route>
 
