@@ -40,6 +40,7 @@ import {
   GuestHouseMaster,
   HotelMaster,
 } from "./pages/admin/masters/PlaceholderMaster";
+import { PlaceholderPageAdmin } from "./pages/admin/PlaceholderPageAdmin";
 
 const queryClient = new QueryClient();
 
@@ -106,6 +107,15 @@ const App = () => (
           <Route path="/admin/masters/company-master" element={<Protected><CompanyMaster /></Protected>} />
           <Route path="/admin/masters/guest-house-master" element={<Protected><GuestHouseMaster /></Protected>} />
           <Route path="/admin/masters/hotel-master" element={<Protected><HotelMaster /></Protected>} />
+
+          {/* Admin Sections */}
+          <Route path="/admin/dashboard" element={<Protected><Index /></Protected>} />
+          <Route path="/admin/employee" element={<Protected><PlaceholderPageAdmin title="Employee Management" description="Manage employee records and information" /></Protected>} />
+          <Route path="/admin/travel" element={<Protected><PlaceholderPageAdmin title="Travel Management" description="Manage travel requests and bookings" /></Protected>} />
+          <Route path="/admin/expense" element={<Protected><PlaceholderPageAdmin title="Expense Management" description="Manage expense reports and reimbursements" /></Protected>} />
+          <Route path="/admin/leave" element={<Protected><PlaceholderPageAdmin title="Leave Management" description="Manage employee leave requests and policies" /></Protected>} />
+          <Route path="/admin/reports" element={<Protected><PlaceholderPageAdmin title="Reports & Analytics" description="View reports and analytics dashboard" /></Protected>} />
+          <Route path="/admin/settings" element={<Protected><PlaceholderPageAdmin title="System Settings" description="Configure system settings and preferences" /></Protected>} />
           <Route
             path="/travel-request/:id"
             element={
