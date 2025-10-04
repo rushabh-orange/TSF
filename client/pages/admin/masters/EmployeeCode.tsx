@@ -11,6 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Plus, Search, Edit, Trash2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function EmployeeCode() {
   return (
