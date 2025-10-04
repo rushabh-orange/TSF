@@ -17,6 +17,7 @@ import { isAuthenticated } from "@/lib/auth";
 // Admin Masters
 import Masters from "./pages/admin/Masters";
 import EmployeeCode from "./pages/admin/masters/EmployeeCode";
+import AddEmployeeCode from "./pages/admin/masters/AddEmployeeCode";
 import GLCode from "./pages/admin/masters/GLCode";
 import Department from "./pages/admin/masters/Department";
 import {
@@ -86,6 +87,7 @@ const App = () => (
             }
           />
           <Route path="/admin/masters/employee-code" element={<Protected><EmployeeCode /></Protected>} />
+          <Route path="/admin/masters/employee-code/add" element={<Protected><AddEmployeeCode /></Protected>} />
           <Route path="/admin/masters/grade" element={<Protected><Grade /></Protected>} />
           <Route path="/admin/masters/gl-code" element={<Protected><GLCode /></Protected>} />
           <Route path="/admin/masters/society" element={<Protected><Society /></Protected>} />
