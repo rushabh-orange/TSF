@@ -1,10 +1,10 @@
-import { Layout } from "@/components/Layout";
+import { AdminLayout } from "@/components/AdminLayout";
 import { DashboardOverview } from "@/components/DashboardOverview";
 
 export default function Index() {
   return (
-    <Layout>
+    <AdminLayout>
       <DashboardOverview />
-    </Layout>
+    </AdminLayout>
   );
 }

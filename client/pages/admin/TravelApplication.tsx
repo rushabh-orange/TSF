@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Layout } from "@/components/Layout";
+import { AdminLayout } from "@/components/AdminLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -170,7 +170,7 @@ export default function TravelApplication() {
   }
 
   return (
-    <Layout>
+    <AdminLayout>
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-semibold text-foreground">
@@ -274,6 +274,6 @@ export default function TravelApplication() {
             </Button>
         </div>
       </div>
-    </Layout>
+    </AdminLayout>
   );
 }
