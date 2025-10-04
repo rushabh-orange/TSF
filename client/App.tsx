@@ -86,38 +86,266 @@ const App = () => (
               </Protected>
             }
           />
-          <Route path="/admin/masters/employee-code" element={<Protected><EmployeeCode /></Protected>} />
-          <Route path="/admin/masters/employee-code/add" element={<Protected><AddEmployeeCode /></Protected>} />
-          <Route path="/admin/masters/grade" element={<Protected><Grade /></Protected>} />
-          <Route path="/admin/masters/gl-code" element={<Protected><GLCode /></Protected>} />
-          <Route path="/admin/masters/society" element={<Protected><Society /></Protected>} />
-          <Route path="/admin/masters/department" element={<Protected><Department /></Protected>} />
-          <Route path="/admin/masters/designation" element={<Protected><Designation /></Protected>} />
-          <Route path="/admin/masters/city" element={<Protected><City /></Protected>} />
-          <Route path="/admin/masters/state" element={<Protected><State /></Protected>} />
-          <Route path="/admin/masters/country" element={<Protected><Country /></Protected>} />
-          <Route path="/admin/masters/category" element={<Protected><Category /></Protected>} />
-          <Route path="/admin/masters/location" element={<Protected><Location /></Protected>} />
-          <Route path="/admin/masters/sub-location" element={<Protected><SubLocation /></Protected>} />
-          <Route path="/admin/masters/employee-type" element={<Protected><EmployeeType /></Protected>} />
-          <Route path="/admin/masters/reporting-manager" element={<Protected><ReportingManager /></Protected>} />
-          <Route path="/admin/masters/travel-mode" element={<Protected><TravelMode /></Protected>} />
-          <Route path="/admin/masters/travel-type-master" element={<Protected><TravelTypeMaster /></Protected>} />
-          <Route path="/admin/masters/travel-sub-type-master" element={<Protected><TravelSubTypeMaster /></Protected>} />
-          <Route path="/admin/masters/expense" element={<Protected><Expense /></Protected>} />
-          <Route path="/admin/masters/leave" element={<Protected><Leave /></Protected>} />
-          <Route path="/admin/masters/company-master" element={<Protected><CompanyMaster /></Protected>} />
-          <Route path="/admin/masters/guest-house-master" element={<Protected><GuestHouseMaster /></Protected>} />
-          <Route path="/admin/masters/hotel-master" element={<Protected><HotelMaster /></Protected>} />
+          <Route
+            path="/admin/masters/employee-code"
+            element={
+              <Protected>
+                <EmployeeCode />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/employee-code/add"
+            element={
+              <Protected>
+                <AddEmployeeCode />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/grade"
+            element={
+              <Protected>
+                <Grade />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/gl-code"
+            element={
+              <Protected>
+                <GLCode />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/society"
+            element={
+              <Protected>
+                <Society />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/department"
+            element={
+              <Protected>
+                <Department />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/designation"
+            element={
+              <Protected>
+                <Designation />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/city"
+            element={
+              <Protected>
+                <City />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/state"
+            element={
+              <Protected>
+                <State />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/country"
+            element={
+              <Protected>
+                <Country />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/category"
+            element={
+              <Protected>
+                <Category />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/location"
+            element={
+              <Protected>
+                <Location />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/sub-location"
+            element={
+              <Protected>
+                <SubLocation />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/employee-type"
+            element={
+              <Protected>
+                <EmployeeType />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/reporting-manager"
+            element={
+              <Protected>
+                <ReportingManager />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/travel-mode"
+            element={
+              <Protected>
+                <TravelMode />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/travel-type-master"
+            element={
+              <Protected>
+                <TravelTypeMaster />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/travel-sub-type-master"
+            element={
+              <Protected>
+                <TravelSubTypeMaster />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/expense"
+            element={
+              <Protected>
+                <Expense />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/leave"
+            element={
+              <Protected>
+                <Leave />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/company-master"
+            element={
+              <Protected>
+                <CompanyMaster />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/guest-house-master"
+            element={
+              <Protected>
+                <GuestHouseMaster />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/hotel-master"
+            element={
+              <Protected>
+                <HotelMaster />
+              </Protected>
+            }
+          />
 
           {/* Admin Sections */}
-          <Route path="/admin/dashboard" element={<Protected><Index /></Protected>} />
-          <Route path="/admin/employee" element={<Protected><PlaceholderPageAdmin title="Employee Management" description="Manage employee records and information" /></Protected>} />
-          <Route path="/admin/travel" element={<Protected><PlaceholderPageAdmin title="Travel Management" description="Manage travel requests and bookings" /></Protected>} />
-          <Route path="/admin/expense" element={<Protected><PlaceholderPageAdmin title="Expense Management" description="Manage expense reports and reimbursements" /></Protected>} />
-          <Route path="/admin/leave" element={<Protected><PlaceholderPageAdmin title="Leave Management" description="Manage employee leave requests and policies" /></Protected>} />
-          <Route path="/admin/reports" element={<Protected><PlaceholderPageAdmin title="Reports & Analytics" description="View reports and analytics dashboard" /></Protected>} />
-          <Route path="/admin/settings" element={<Protected><PlaceholderPageAdmin title="System Settings" description="Configure system settings and preferences" /></Protected>} />
+          <Route
+            path="/admin/dashboard"
+            element={
+              <Protected>
+                <Index />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/employee"
+            element={
+              <Protected>
+                <PlaceholderPageAdmin
+                  title="Employee Management"
+                  description="Manage employee records and information"
+                />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/travel"
+            element={
+              <Protected>
+                <PlaceholderPageAdmin
+                  title="Travel Management"
+                  description="Manage travel requests and bookings"
+                />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/expense"
+            element={
+              <Protected>
+                <PlaceholderPageAdmin
+                  title="Expense Management"
+                  description="Manage expense reports and reimbursements"
+                />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/leave"
+            element={
+              <Protected>
+                <PlaceholderPageAdmin
+                  title="Leave Management"
+                  description="Manage employee leave requests and policies"
+                />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/reports"
+            element={
+              <Protected>
+                <PlaceholderPageAdmin
+                  title="Reports & Analytics"
+                  description="View reports and analytics dashboard"
+                />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/settings"
+            element={
+              <Protected>
+                <PlaceholderPageAdmin
+                  title="System Settings"
+                  description="Configure system settings and preferences"
+                />
+              </Protected>
+            }
+          />
           <Route
             path="/travel-request/:id"
             element={

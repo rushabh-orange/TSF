@@ -23,7 +23,9 @@ export default function EmployeeCode() {
             <h1 className="text-[26px] font-semibold text-[#1C1F37] font-['DM_Sans']">
               Employee Code Master
             </h1>
-            <p className="text-[#6B7280] mt-1">Manage employee codes and identifiers</p>
+            <p className="text-[#6B7280] mt-1">
+              Manage employee codes and identifiers
+            </p>
           </div>
           <Link to="/admin/masters/employee-code/add">
             <Button className="bg-[#3B82F7] hover:bg-[#2563EB] text-white gap-2">
@@ -44,9 +46,7 @@ export default function EmployeeCode() {
                   className="pl-10"
                 />
               </div>
-              <Button variant="outline">
-                Filter
-              </Button>
+              <Button variant="outline">Filter</Button>
             </div>
           </CardContent>
         </Card>
