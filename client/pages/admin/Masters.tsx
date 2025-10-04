@@ -35,7 +35,7 @@ const masterCategories = [
         </g>
       </svg>
     ),
-    isHighlighted: true, // This represents the hovered/selected state from Figma
+    isHighlighted: false, // This represents the hovered/selected state from Figma
   },
   {
     id: "society",
