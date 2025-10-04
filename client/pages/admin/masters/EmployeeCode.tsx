@@ -25,10 +25,12 @@ export default function EmployeeCode() {
             </h1>
             <p className="text-[#6B7280] mt-1">Manage employee codes and identifiers</p>
           </div>
-          <Button className="bg-[#3B82F7] hover:bg-[#2563EB] text-white gap-2">
-            <Plus className="h-4 w-4" />
-            Add Employee Code
-          </Button>
+          <Link to="/admin/masters/employee-code/add">
+            <Button className="bg-[#3B82F7] hover:bg-[#2563EB] text-white gap-2">
+              <Plus className="h-4 w-4" />
+              Add Employee Code
+            </Button>
+          </Link>
         </div>
 
         {/* Search and Filters */}
