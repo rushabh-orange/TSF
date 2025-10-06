@@ -52,7 +52,7 @@ export default function AppRoutes() {
       <Route path="/login" element={<Login />} />
 
       {/* Employee Routes */}
-      <Route element={<ProtectedRoute role={["employee"]} />}>
+      <Route element={<ProtectedRoute role="employee" />}>
         <Route path="/employee/dashboard" element={<EmployeeDashboard />} />
         <Route path="/employee/travel-application" element={<TravelApplication />} />
       </Route>
