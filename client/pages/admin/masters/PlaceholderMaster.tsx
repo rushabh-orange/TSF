@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { AdminLayout } from "@/components/AdminLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,24 +11,37 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Plus, Search, Edit, Trash2 } from "lucide-react";
+import { Plus, Search, Edit, Trash2, ArrowLeft } from "lucide-react";
 
 interface PlaceholderMasterProps {
   title: string;
   description: string;
   columns: string[];
   sampleData?: Record<string, any>[];
+  formRoute?: string;
 }
 
-export default function PlaceholderMaster({ 
-  title, 
-  description, 
-  columns, 
-  sampleData = [] 
+export default function PlaceholderMaster({
+  title,
+  description,
+  columns,
+  sampleData = [],
+  formRoute
 }: PlaceholderMasterProps) {
+  const navigate = useNavigate();
+
   return (
     <AdminLayout>
       <div className="space-y-6">
+        {/* Back Button */}
+        <button
+          onClick={() => navigate("/admin/masters")}
+          className="flex items-center gap-2 text-[#3B82F7] hover:underline"
+        >
+          <ArrowLeft className="h-5 w-5" />
+          <span className="text-base font-normal font-['DM_Sans']">Back</span>
+        </button>
+
         {/* Page Header */}
         <div className="flex items-center justify-between">
           <div>
@@ -36,7 +50,10 @@ export default function PlaceholderMaster({
             </h1>
             <p className="text-[#6B7280] mt-1">{description}</p>
           </div>
-          <Button className="bg-[#3B82F7] hover:bg-[#2563EB] text-white gap-2">
+          <Button
+            onClick={() => formRoute && navigate(formRoute)}
+            className="bg-[#3B82F7] hover:bg-[#2563EB] text-white gap-2"
+          >
             <Plus className="h-4 w-4" />
             Add {title.replace(' Master', '')}
           </Button>
@@ -123,6 +140,7 @@ export function Grade() {
         { "Grade Code": "GRD001", "Grade Name": "Junior", "Level": "1", "Min Salary": "$30,000", "Max Salary": "$40,000", "Status": "Active" },
         { "Grade Code": "GRD002", "Grade Name": "Senior", "Level": "2", "Min Salary": "$40,000", "Max Salary": "$60,000", "Status": "Active" },
       ]}
+      formRoute="/admin/masters/grade/add"
     />
   );
 }
