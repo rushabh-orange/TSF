@@ -148,7 +148,7 @@ export default function AppRoutes() {
       </Route>
 
       {/* Legacy routes for backward compatibility */}
-      <Route element={<ProtectedRoute role={["admin"]} />}>
+      <Route element={<ProtectedRoute role="admin" />}>
         <Route path="/travel-request" element={<TravelRequestApprovals />} />
         <Route path="/travel-request/:id" element={<TravelApplicationAdmin />} />
         <Route 
