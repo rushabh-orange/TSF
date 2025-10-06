@@ -26,7 +26,7 @@ export default function PlaceholderMaster({
   description,
   columns,
   sampleData = [],
-  formRoute
+  formRoute,
 }: PlaceholderMasterProps) {
   const navigate = useNavigate();
 
@@ -55,7 +55,7 @@ export default function PlaceholderMaster({
             className="bg-[#3B82F7] hover:bg-[#2563EB] text-white gap-2"
           >
             <Plus className="h-4 w-4" />
-            Add {title.replace(' Master', '')}
+            Add {title.replace(" Master", "")}
           </Button>
         </div>
 
@@ -70,9 +70,7 @@ export default function PlaceholderMaster({
                   className="pl-10"
                 />
               </div>
-              <Button variant="outline">
-                Filter
-              </Button>
+              <Button variant="outline">Filter</Button>
             </div>
           </CardContent>
         </Card>
@@ -97,7 +95,10 @@ export default function PlaceholderMaster({
                   sampleData.map((row, index) => (
                     <TableRow key={index}>
                       {columns.map((column) => (
-                        <TableCell key={column} className={index === 0 ? "font-medium" : ""}>
+                        <TableCell
+                          key={column}
+                          className={index === 0 ? "font-medium" : ""}
+                        >
                           {row[column] || "-"}
                         </TableCell>
                       ))}
@@ -115,8 +116,12 @@ export default function PlaceholderMaster({
                   ))
                 ) : (
                   <TableRow>
-                    <TableCell colSpan={columns.length + 1} className="text-center py-8 text-[#6B7280]">
-                      No data available. Click "Add {title.replace(' Master', '')}" to get started.
+                    <TableCell
+                      colSpan={columns.length + 1}
+                      className="text-center py-8 text-[#6B7280]"
+                    >
+                      No data available. Click "Add{" "}
+                      {title.replace(" Master", "")}" to get started.
                     </TableCell>
                   </TableRow>
                 )}
@@ -135,10 +140,31 @@ export function Grade() {
     <PlaceholderMaster
       title="Grade Master"
       description="Manage employee grades and levels"
-      columns={["Grade Code", "Grade Name", "Level", "Min Salary", "Max Salary", "Status"]}
+      columns={[
+        "Grade Code",
+        "Grade Name",
+        "Level",
+        "Min Salary",
+        "Max Salary",
+        "Status",
+      ]}
       sampleData={[
-        { "Grade Code": "GRD001", "Grade Name": "Junior", "Level": "1", "Min Salary": "$30,000", "Max Salary": "$40,000", "Status": "Active" },
-        { "Grade Code": "GRD002", "Grade Name": "Senior", "Level": "2", "Min Salary": "$40,000", "Max Salary": "$60,000", "Status": "Active" },
+        {
+          "Grade Code": "GRD001",
+          "Grade Name": "Junior",
+          Level: "1",
+          "Min Salary": "$30,000",
+          "Max Salary": "$40,000",
+          Status: "Active",
+        },
+        {
+          "Grade Code": "GRD002",
+          "Grade Name": "Senior",
+          Level: "2",
+          "Min Salary": "$40,000",
+          "Max Salary": "$60,000",
+          Status: "Active",
+        },
       ]}
       formRoute="/admin/masters/grade/add"
     />
@@ -150,9 +176,21 @@ export function Society() {
     <PlaceholderMaster
       title="Society Master"
       description="Manage society and association data"
-      columns={["Society Code", "Society Name", "Type", "Registration No", "Status"]}
+      columns={[
+        "Society Code",
+        "Society Name",
+        "Type",
+        "Registration No",
+        "Status",
+      ]}
       sampleData={[
-        { "Society Code": "SOC001", "Society Name": "Employee Welfare Society", "Type": "Welfare", "Registration No": "REG123", "Status": "Active" },
+        {
+          "Society Code": "SOC001",
+          "Society Name": "Employee Welfare Society",
+          Type: "Welfare",
+          "Registration No": "REG123",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -163,10 +201,28 @@ export function Designation() {
     <PlaceholderMaster
       title="Designation Master"
       description="Manage job designations and positions"
-      columns={["Designation Code", "Designation Name", "Department", "Grade", "Status"]}
+      columns={[
+        "Designation Code",
+        "Designation Name",
+        "Department",
+        "Grade",
+        "Status",
+      ]}
       sampleData={[
-        { "Designation Code": "DES001", "Designation Name": "Software Engineer", "Department": "IT", "Grade": "Junior", "Status": "Active" },
-        { "Designation Code": "DES002", "Designation Name": "HR Manager", "Department": "HR", "Grade": "Senior", "Status": "Active" },
+        {
+          "Designation Code": "DES001",
+          "Designation Name": "Software Engineer",
+          Department: "IT",
+          Grade: "Junior",
+          Status: "Active",
+        },
+        {
+          "Designation Code": "DES002",
+          "Designation Name": "HR Manager",
+          Department: "HR",
+          Grade: "Senior",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -179,8 +235,20 @@ export function City() {
       description="Manage city information"
       columns={["City Code", "City Name", "State", "Country", "Status"]}
       sampleData={[
-        { "City Code": "CIT001", "City Name": "New York", "State": "New York", "Country": "USA", "Status": "Active" },
-        { "City Code": "CIT002", "City Name": "London", "State": "England", "Country": "UK", "Status": "Active" },
+        {
+          "City Code": "CIT001",
+          "City Name": "New York",
+          State: "New York",
+          Country: "USA",
+          Status: "Active",
+        },
+        {
+          "City Code": "CIT002",
+          "City Name": "London",
+          State: "England",
+          Country: "UK",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -193,8 +261,20 @@ export function State() {
       description="Manage state/province information"
       columns={["State Code", "State Name", "Country", "Capital", "Status"]}
       sampleData={[
-        { "State Code": "ST001", "State Name": "New York", "Country": "USA", "Capital": "Albany", "Status": "Active" },
-        { "State Code": "ST002", "State Name": "California", "Country": "USA", "Capital": "Sacramento", "Status": "Active" },
+        {
+          "State Code": "ST001",
+          "State Name": "New York",
+          Country: "USA",
+          Capital: "Albany",
+          Status: "Active",
+        },
+        {
+          "State Code": "ST002",
+          "State Name": "California",
+          Country: "USA",
+          Capital: "Sacramento",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -205,10 +285,28 @@ export function Country() {
     <PlaceholderMaster
       title="Country Master"
       description="Manage country information"
-      columns={["Country Code", "Country Name", "Currency", "Capital", "Status"]}
+      columns={[
+        "Country Code",
+        "Country Name",
+        "Currency",
+        "Capital",
+        "Status",
+      ]}
       sampleData={[
-        { "Country Code": "US", "Country Name": "United States", "Currency": "USD", "Capital": "Washington D.C.", "Status": "Active" },
-        { "Country Code": "UK", "Country Name": "United Kingdom", "Currency": "GBP", "Capital": "London", "Status": "Active" },
+        {
+          "Country Code": "US",
+          "Country Name": "United States",
+          Currency: "USD",
+          Capital: "Washington D.C.",
+          Status: "Active",
+        },
+        {
+          "Country Code": "UK",
+          "Country Name": "United Kingdom",
+          Currency: "GBP",
+          Capital: "London",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -219,10 +317,28 @@ export function Category() {
     <PlaceholderMaster
       title="Category Master"
       description="Manage expense and travel categories"
-      columns={["Category Code", "Category Name", "Type", "Description", "Status"]}
+      columns={[
+        "Category Code",
+        "Category Name",
+        "Type",
+        "Description",
+        "Status",
+      ]}
       sampleData={[
-        { "Category Code": "CAT001", "Category Name": "Domestic Travel", "Type": "Travel", "Description": "Local travel expenses", "Status": "Active" },
-        { "Category Code": "CAT002", "Category Name": "International Travel", "Type": "Travel", "Description": "International travel expenses", "Status": "Active" },
+        {
+          "Category Code": "CAT001",
+          "Category Name": "Domestic Travel",
+          Type: "Travel",
+          Description: "Local travel expenses",
+          Status: "Active",
+        },
+        {
+          "Category Code": "CAT002",
+          "Category Name": "International Travel",
+          Type: "Travel",
+          Description: "International travel expenses",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -235,8 +351,20 @@ export function Location() {
       description="Manage office and travel locations"
       columns={["Location Code", "Location Name", "Address", "City", "Status"]}
       sampleData={[
-        { "Location Code": "LOC001", "Location Name": "Head Office", "Address": "123 Main St", "City": "New York", "Status": "Active" },
-        { "Location Code": "LOC002", "Location Name": "Branch Office", "Address": "456 Oak Ave", "City": "London", "Status": "Active" },
+        {
+          "Location Code": "LOC001",
+          "Location Name": "Head Office",
+          Address: "123 Main St",
+          City: "New York",
+          Status: "Active",
+        },
+        {
+          "Location Code": "LOC002",
+          "Location Name": "Branch Office",
+          Address: "456 Oak Ave",
+          City: "London",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -247,9 +375,21 @@ export function SubLocation() {
     <PlaceholderMaster
       title="Sub Location Master"
       description="Manage sub-locations within main locations"
-      columns={["Sub Location Code", "Sub Location Name", "Parent Location", "Floor", "Status"]}
+      columns={[
+        "Sub Location Code",
+        "Sub Location Name",
+        "Parent Location",
+        "Floor",
+        "Status",
+      ]}
       sampleData={[
-        { "Sub Location Code": "SUB001", "Sub Location Name": "IT Department", "Parent Location": "Head Office", "Floor": "3rd Floor", "Status": "Active" },
+        {
+          "Sub Location Code": "SUB001",
+          "Sub Location Name": "IT Department",
+          "Parent Location": "Head Office",
+          Floor: "3rd Floor",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -262,8 +402,20 @@ export function EmployeeType() {
       description="Manage employee types and classifications"
       columns={["Type Code", "Type Name", "Description", "Benefits", "Status"]}
       sampleData={[
-        { "Type Code": "EMP001", "Type Name": "Full Time", "Description": "Full-time employee", "Benefits": "All", "Status": "Active" },
-        { "Type Code": "EMP002", "Type Name": "Contract", "Description": "Contract employee", "Benefits": "Basic", "Status": "Active" },
+        {
+          "Type Code": "EMP001",
+          "Type Name": "Full Time",
+          Description: "Full-time employee",
+          Benefits: "All",
+          Status: "Active",
+        },
+        {
+          "Type Code": "EMP002",
+          "Type Name": "Contract",
+          Description: "Contract employee",
+          Benefits: "Basic",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -274,10 +426,28 @@ export function ReportingManager() {
     <PlaceholderMaster
       title="Reporting Manager Master"
       description="Manage reporting hierarchy and manager assignments"
-      columns={["Manager Code", "Manager Name", "Department", "Team Size", "Status"]}
+      columns={[
+        "Manager Code",
+        "Manager Name",
+        "Department",
+        "Team Size",
+        "Status",
+      ]}
       sampleData={[
-        { "Manager Code": "MGR001", "Manager Name": "John Smith", "Department": "IT", "Team Size": "12", "Status": "Active" },
-        { "Manager Code": "MGR002", "Manager Name": "Sarah Johnson", "Department": "HR", "Team Size": "5", "Status": "Active" },
+        {
+          "Manager Code": "MGR001",
+          "Manager Name": "John Smith",
+          Department: "IT",
+          "Team Size": "12",
+          Status: "Active",
+        },
+        {
+          "Manager Code": "MGR002",
+          "Manager Name": "Sarah Johnson",
+          Department: "HR",
+          "Team Size": "5",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -290,9 +460,27 @@ export function TravelMode() {
       description="Manage travel modes and transportation options"
       columns={["Mode Code", "Mode Name", "Category", "Rate per KM", "Status"]}
       sampleData={[
-        { "Mode Code": "TM001", "Mode Name": "Flight", "Category": "Air", "Rate per KM": "$0.50", "Status": "Active" },
-        { "Mode Code": "TM002", "Mode Name": "Train", "Category": "Rail", "Rate per KM": "$0.20", "Status": "Active" },
-        { "Mode Code": "TM003", "Mode Name": "Car", "Category": "Road", "Rate per KM": "$0.30", "Status": "Active" },
+        {
+          "Mode Code": "TM001",
+          "Mode Name": "Flight",
+          Category: "Air",
+          "Rate per KM": "$0.50",
+          Status: "Active",
+        },
+        {
+          "Mode Code": "TM002",
+          "Mode Name": "Train",
+          Category: "Rail",
+          "Rate per KM": "$0.20",
+          Status: "Active",
+        },
+        {
+          "Mode Code": "TM003",
+          "Mode Name": "Car",
+          Category: "Road",
+          "Rate per KM": "$0.30",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -305,8 +493,20 @@ export function TravelTypeMaster() {
       description="Manage travel types and purposes"
       columns={["Type Code", "Type Name", "Purpose", "Max Days", "Status"]}
       sampleData={[
-        { "Type Code": "TT001", "Type Name": "Business Travel", "Purpose": "Business meetings", "Max Days": "30", "Status": "Active" },
-        { "Type Code": "TT002", "Type Name": "Training", "Purpose": "Employee training", "Max Days": "10", "Status": "Active" },
+        {
+          "Type Code": "TT001",
+          "Type Name": "Business Travel",
+          Purpose: "Business meetings",
+          "Max Days": "30",
+          Status: "Active",
+        },
+        {
+          "Type Code": "TT002",
+          "Type Name": "Training",
+          Purpose: "Employee training",
+          "Max Days": "10",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -317,9 +517,21 @@ export function TravelSubTypeMaster() {
     <PlaceholderMaster
       title="Travel Sub Type Master"
       description="Manage travel sub-types for detailed categorization"
-      columns={["Sub Type Code", "Sub Type Name", "Parent Type", "Description", "Status"]}
+      columns={[
+        "Sub Type Code",
+        "Sub Type Name",
+        "Parent Type",
+        "Description",
+        "Status",
+      ]}
       sampleData={[
-        { "Sub Type Code": "TST001", "Sub Type Name": "Client Meeting", "Parent Type": "Business Travel", "Description": "Meeting with clients", "Status": "Active" },
+        {
+          "Sub Type Code": "TST001",
+          "Sub Type Name": "Client Meeting",
+          "Parent Type": "Business Travel",
+          Description: "Meeting with clients",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -330,10 +542,28 @@ export function Expense() {
     <PlaceholderMaster
       title="Expense Master"
       description="Manage expense types and categories"
-      columns={["Expense Code", "Expense Name", "Category", "Max Amount", "Status"]}
+      columns={[
+        "Expense Code",
+        "Expense Name",
+        "Category",
+        "Max Amount",
+        "Status",
+      ]}
       sampleData={[
-        { "Expense Code": "EXP001", "Expense Name": "Meals", "Category": "Food", "Max Amount": "$100", "Status": "Active" },
-        { "Expense Code": "EXP002", "Expense Name": "Accommodation", "Category": "Lodging", "Max Amount": "$300", "Status": "Active" },
+        {
+          "Expense Code": "EXP001",
+          "Expense Name": "Meals",
+          Category: "Food",
+          "Max Amount": "$100",
+          Status: "Active",
+        },
+        {
+          "Expense Code": "EXP002",
+          "Expense Name": "Accommodation",
+          Category: "Lodging",
+          "Max Amount": "$300",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -344,10 +574,28 @@ export function Leave() {
     <PlaceholderMaster
       title="Leave Master"
       description="Manage leave types and policies"
-      columns={["Leave Code", "Leave Type", "Max Days", "Carry Forward", "Status"]}
+      columns={[
+        "Leave Code",
+        "Leave Type",
+        "Max Days",
+        "Carry Forward",
+        "Status",
+      ]}
       sampleData={[
-        { "Leave Code": "LV001", "Leave Type": "Annual Leave", "Max Days": "25", "Carry Forward": "Yes", "Status": "Active" },
-        { "Leave Code": "LV002", "Leave Type": "Sick Leave", "Max Days": "10", "Carry Forward": "No", "Status": "Active" },
+        {
+          "Leave Code": "LV001",
+          "Leave Type": "Annual Leave",
+          "Max Days": "25",
+          "Carry Forward": "Yes",
+          Status: "Active",
+        },
+        {
+          "Leave Code": "LV002",
+          "Leave Type": "Sick Leave",
+          "Max Days": "10",
+          "Carry Forward": "No",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -358,9 +606,21 @@ export function CompanyMaster() {
     <PlaceholderMaster
       title="Company Master"
       description="Manage company information and details"
-      columns={["Company Code", "Company Name", "Address", "Registration No", "Status"]}
+      columns={[
+        "Company Code",
+        "Company Name",
+        "Address",
+        "Registration No",
+        "Status",
+      ]}
       sampleData={[
-        { "Company Code": "COM001", "Company Name": "ABC Corporation", "Address": "123 Business St", "Registration No": "12345", "Status": "Active" },
+        {
+          "Company Code": "COM001",
+          "Company Name": "ABC Corporation",
+          Address: "123 Business St",
+          "Registration No": "12345",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -373,7 +633,13 @@ export function GuestHouseMaster() {
       description="Manage guest house accommodations"
       columns={["Guest House Code", "Name", "Location", "Rooms", "Status"]}
       sampleData={[
-        { "Guest House Code": "GH001", "Name": "Corporate Guest House", "Location": "Downtown", "Rooms": "20", "Status": "Active" },
+        {
+          "Guest House Code": "GH001",
+          Name: "Corporate Guest House",
+          Location: "Downtown",
+          Rooms: "20",
+          Status: "Active",
+        },
       ]}
     />
   );
@@ -384,10 +650,28 @@ export function HotelMaster() {
     <PlaceholderMaster
       title="Hotel Master"
       description="Manage hotel partnerships and accommodations"
-      columns={["Hotel Code", "Hotel Name", "Location", "Star Rating", "Status"]}
+      columns={[
+        "Hotel Code",
+        "Hotel Name",
+        "Location",
+        "Star Rating",
+        "Status",
+      ]}
       sampleData={[
-        { "Hotel Code": "HOT001", "Hotel Name": "Grand Hotel", "Location": "City Center", "Star Rating": "5", "Status": "Active" },
-        { "Hotel Code": "HOT002", "Hotel Name": "Business Inn", "Location": "Airport", "Star Rating": "4", "Status": "Active" },
+        {
+          "Hotel Code": "HOT001",
+          "Hotel Name": "Grand Hotel",
+          Location: "City Center",
+          "Star Rating": "5",
+          Status: "Active",
+        },
+        {
+          "Hotel Code": "HOT002",
+          "Hotel Name": "Business Inn",
+          Location: "Airport",
+          "Star Rating": "4",
+          Status: "Active",
+        },
       ]}
     />
   );

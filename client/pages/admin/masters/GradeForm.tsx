@@ -136,7 +136,9 @@ export default function GradeForm() {
                   <SelectValue placeholder="Select Society Name" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="society1">Employee Welfare Society</SelectItem>
+                  <SelectItem value="society1">
+                    Employee Welfare Society
+                  </SelectItem>
                   <SelectItem value="society2">Housing Society</SelectItem>
                   <SelectItem value="society3">Recreation Society</SelectItem>
                 </SelectContent>

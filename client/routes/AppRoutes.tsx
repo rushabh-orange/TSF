@@ -55,7 +55,10 @@ export default function AppRoutes() {
       {/* Employee Routes */}
       <Route element={<ProtectedRoute role="employee" />}>
         <Route path="/employee/dashboard" element={<EmployeeDashboard />} />
-        <Route path="/employee/travel-application" element={<TravelApplication />} />
+        <Route
+          path="/employee/travel-application"
+          element={<TravelApplication />}
+        />
       </Route>
 
       {/* Admin Routes */}
@@ -63,7 +66,7 @@ export default function AppRoutes() {
         {/* Main Admin Dashboard */}
         <Route path="/" element={<AdminDashboard />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        
+
         {/* Masters Section */}
         <Route path="/admin/masters" element={<Masters />} />
         <Route path="/admin/masters/employee-code" element={<EmployeeCode />} />
@@ -80,16 +83,31 @@ export default function AppRoutes() {
         <Route path="/admin/masters/location" element={<Location />} />
         <Route path="/admin/masters/sub-location" element={<SubLocation />} />
         <Route path="/admin/masters/employee-type" element={<EmployeeType />} />
-        <Route path="/admin/masters/reporting-manager" element={<ReportingManager />} />
+        <Route
+          path="/admin/masters/reporting-manager"
+          element={<ReportingManager />}
+        />
         <Route path="/admin/masters/travel-mode" element={<TravelMode />} />
-        <Route path="/admin/masters/travel-type-master" element={<TravelTypeMaster />} />
-        <Route path="/admin/masters/travel-sub-type-master" element={<TravelSubTypeMaster />} />
+        <Route
+          path="/admin/masters/travel-type-master"
+          element={<TravelTypeMaster />}
+        />
+        <Route
+          path="/admin/masters/travel-sub-type-master"
+          element={<TravelSubTypeMaster />}
+        />
         <Route path="/admin/masters/expense" element={<Expense />} />
         <Route path="/admin/masters/leave" element={<Leave />} />
-        <Route path="/admin/masters/company-master" element={<CompanyMaster />} />
-        <Route path="/admin/masters/guest-house-master" element={<GuestHouseMaster />} />
+        <Route
+          path="/admin/masters/company-master"
+          element={<CompanyMaster />}
+        />
+        <Route
+          path="/admin/masters/guest-house-master"
+          element={<GuestHouseMaster />}
+        />
         <Route path="/admin/masters/hotel-master" element={<HotelMaster />} />
-        
+
         {/* Other Admin Sections */}
         <Route
           path="/admin/employee"
@@ -109,8 +127,14 @@ export default function AppRoutes() {
             />
           }
         />
-        <Route path="/admin/travel-approvals" element={<TravelRequestApprovals />} />
-        <Route path="/admin/travel-request/:id" element={<TravelApplicationAdmin />} />
+        <Route
+          path="/admin/travel-approvals"
+          element={<TravelRequestApprovals />}
+        />
+        <Route
+          path="/admin/travel-request/:id"
+          element={<TravelApplicationAdmin />}
+        />
         <Route
           path="/admin/expense"
           element={
@@ -152,87 +176,90 @@ export default function AppRoutes() {
       {/* Legacy routes for backward compatibility */}
       <Route element={<ProtectedRoute role="admin" />}>
         <Route path="/travel-request" element={<TravelRequestApprovals />} />
-        <Route path="/travel-request/:id" element={<TravelApplicationAdmin />} />
-        <Route 
-          path="/bookings" 
+        <Route
+          path="/travel-request/:id"
+          element={<TravelApplicationAdmin />}
+        />
+        <Route
+          path="/bookings"
           element={
             <PlaceholderPage
               title="Bookings"
               description="View and manage travel bookings"
             />
-          } 
+          }
         />
-        <Route 
-          path="/itineraries" 
+        <Route
+          path="/itineraries"
           element={
             <PlaceholderPage
               title="Itineraries"
               description="Plan and view travel itineraries"
             />
-          } 
+          }
         />
-        <Route 
-          path="/expense-reports" 
+        <Route
+          path="/expense-reports"
           element={
             <PlaceholderPage
               title="Expense Reports"
               description="Submit and track expense reports"
             />
-          } 
+          }
         />
-        <Route 
-          path="/reimbursements" 
+        <Route
+          path="/reimbursements"
           element={
             <PlaceholderPage
               title="Reimbursements"
               description="Manage expense reimbursements"
             />
-          } 
+          }
         />
-        <Route 
-          path="/approvals" 
+        <Route
+          path="/approvals"
           element={
             <PlaceholderPage
               title="Approvals"
               description="Review and approve travel requests"
             />
-          } 
+          }
         />
-        <Route 
-          path="/users" 
+        <Route
+          path="/users"
           element={
             <PlaceholderPage
               title="Users"
               description="Manage user accounts and permissions"
             />
-          } 
+          }
         />
-        <Route 
-          path="/departments" 
+        <Route
+          path="/departments"
           element={
             <PlaceholderPage
               title="Departments"
               description="Organize and manage departments"
             />
-          } 
+          }
         />
-        <Route 
-          path="/settings" 
+        <Route
+          path="/settings"
           element={
             <PlaceholderPage
               title="Settings"
               description="Configure system settings"
             />
-          } 
+          }
         />
-        <Route 
-          path="/reports" 
+        <Route
+          path="/reports"
           element={
             <PlaceholderPage
               title="Reports"
               description="View analytics and reports"
             />
-          } 
+          }
         />
       </Route>
 
