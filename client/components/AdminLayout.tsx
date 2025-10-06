@@ -112,7 +112,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
     },
     {
       label: "Travel",
-      path: "/admin/travel",
+      path: "/travel-request",
       Icon: TravelIcon,
     },
     {
@@ -179,16 +179,47 @@ export function AdminLayout({ children }: AdminLayoutProps) {
           {/* Navigation */}
           <nav className="flex-1 overflow-y-auto px-6 py-4">
             <div className="space-y-2">
-              {navigationItems.map(({ label, path, Icon }) => (
-                <NavItem
-                  key={label}
-                  icon={<Icon />}
-                  label={label}
-                  active={location.pathname === path || (path === "/admin/masters" && location.pathname.startsWith("/admin/masters"))}
-                  expanded={sidebarExpanded}
-                  onClick={() => navigate(path)}
-                />
-              ))}
+              {navigationItems.map(({ label, path, Icon, children }) => {
+                const hasChildren = Array.isArray(children) && children.length > 0;
+                const isActive =
+                  location.pathname === path ||
+                  location.pathname.startsWith(path + "/") ||
+                  (path === "/admin/masters" && location.pathname.startsWith("/admin/masters")) ||
+                  (hasChildren && children!.some((c) => location.pathname === c.path || location.pathname.startsWith(c.path + "/")));
+
+                return (
+                  <div key={label}>
+                    <NavItem
+                      icon={<Icon />}
+                      label={label}
+                      active={isActive}
+                      expanded={sidebarExpanded}
+                      onClick={() => navigate(path)}
+                    />
+                    {hasChildren && sidebarExpanded && (
+                      <div className="mt-1 pl-10 space-y-1">
+                        {children!.map((c) => {
+                          const childActive = location.pathname === c.path || location.pathname.startsWith(c.path + "/");
+                          return (
+                            <button
+                              key={c.label}
+                              onClick={() => navigate(c.path)}
+                              className={cn(
+                                "flex w-full items-center rounded-[8px] py-2 px-4 text-sm transition-colors",
+                                childActive
+                                  ? "bg-[#3B82F7] text-white"
+                                  : "text-[#6B7280] hover:bg-[#3B82F7]/10 hover:text-[#1C1F37]"
+                              )}
+                            >
+                              {c.label}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </nav>
         </div>

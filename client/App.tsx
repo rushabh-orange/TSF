@@ -20,6 +20,7 @@ import EmployeeCode from "./pages/admin/masters/EmployeeCode";
 import AddEmployeeCode from "./pages/admin/masters/AddEmployeeCode";
 import GLCode from "./pages/admin/masters/GLCode";
 import Department from "./pages/admin/masters/Department";
+import GradeForm from "./pages/admin/masters/GradeForm";
 import {
   Grade,
   Society,
@@ -107,6 +108,14 @@ const App = () => (
             element={
               <Protected>
                 <Grade />
+              </Protected>
+            }
+          />
+          <Route
+            path="/admin/masters/grade/add"
+            element={
+              <Protected>
+                <GradeForm />
               </Protected>
             }
           />
