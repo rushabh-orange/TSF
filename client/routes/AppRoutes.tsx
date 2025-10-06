@@ -15,6 +15,7 @@ import Masters from "../pages/admin/Masters";
 import EmployeeCode from "../pages/admin/masters/EmployeeCode";
 import GLCode from "../pages/admin/masters/GLCode";
 import Department from "../pages/admin/masters/Department";
+import GradeForm from "../pages/admin/masters/GradeForm";
 import {
   Grade,
   Society,
@@ -67,6 +68,7 @@ export default function AppRoutes() {
         <Route path="/admin/masters" element={<Masters />} />
         <Route path="/admin/masters/employee-code" element={<EmployeeCode />} />
         <Route path="/admin/masters/grade" element={<Grade />} />
+        <Route path="/admin/masters/grade/add" element={<GradeForm />} />
         <Route path="/admin/masters/gl-code" element={<GLCode />} />
         <Route path="/admin/masters/society" element={<Society />} />
         <Route path="/admin/masters/department" element={<Department />} />
