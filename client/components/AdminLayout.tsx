@@ -112,7 +112,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
     },
     {
       label: "Travel",
-      path: "/admin/travel-approvals",
+      path: "/travel-request",
       Icon: TravelIcon,
     },
     {
