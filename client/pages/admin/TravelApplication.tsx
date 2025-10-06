@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/select";
 import { api } from "@/lib/http";
 import { TravelRequestApproval } from "@shared/travel";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 
 // This constant data array MUST be defined OUTSIDE and BEFORE the component function.
 const initialBookingSections = [
@@ -162,11 +162,11 @@ export default function TravelApplication() {
   };
 
   if (loading) {
-    return <Layout><div className="p-4">Loading travel request details...</div></Layout>;
+    return <AdminLayout><div className="p-4">Loading travel request details...</div></AdminLayout>;
   }
 
   if (!request || !request.employee) {
-    return <Layout><div className="p-4">Travel request not found or data is invalid.</div></Layout>;
+    return <AdminLayout><div className="p-4">Travel request not found or data is invalid.</div></AdminLayout>;
   }
 
   return (
